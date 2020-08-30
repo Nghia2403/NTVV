@@ -70,21 +70,21 @@ void Game::input(vector<Action> actions)
 		switch (action._type)
 		{
 		case MOVE_UP:
-			if (main->getposition().x >= wareHouse->getposition().x-50 && main->getposition().x <= wareHouse->getposition().x+180)
+			if (main->getposition().x >= wareHouse->getposition().x-50 && main->getposition().x <= wareHouse->getposition().x+150)
 			{
-				if (through(main->getposition().x, main->getposition().y, wareHouse->getposition().x+200, wareHouse->getposition().y+200))
-					main->stop(0, wareHouse->getposition().y + 200);
+				if (through(main->getposition().x, main->getposition().y, wareHouse->getposition().x+100, wareHouse->getposition().y+150))
+					main->move_up(0);
 				else
 					main->move_up(2);
 			}
 			else if(main->getposition().y <470)
-				main->stop(0, 470);
+				main->move_up(0);
 			else
 				main->move_up(2);
 			break;
 		case MOVE_DOWN:
-			if (main->getposition().y>= 920)
-				main->stop(0, 920);
+			if (main->getposition().y >= 920)
+				main->move_down(0);
 			else
 				main->move_down(2);
 			break;
@@ -92,25 +92,25 @@ void Game::input(vector<Action> actions)
 			if (main->getposition().x >= wareHouse->getposition().x - 30 && main->getposition().x <= wareHouse->getposition().x + 180)
 			{
 				if (through(main->getposition().x, main->getposition().y, wareHouse->getposition().x + 150, wareHouse->getposition().y + 100))
-					main->stop(0, wareHouse->getposition().x-380);
+					main->move_left(0);
 				else
 					main->move_left(2);
 			}
 			else if (main->getposition().x <=0)
-				main->stop(0, main->getposition().y);
+				main->move_left(0);
 			else
 				main->move_left(2);
 			break;
 		case MOVE_RIGHT:
-			if (main->getposition().x >= wareHouse->getposition().x - 50 && main->getposition().x <= wareHouse->getposition().x + 150)
+			if (main->getposition().x+80 >= wareHouse->getposition().x && main->getposition().x <= wareHouse->getposition().x + 150)
 			{
 				if (through(main->getposition().x, main->getposition().y, wareHouse->getposition().x , wareHouse->getposition().y + 100))
-					main->stop(0, wareHouse->getposition().x - 380);
+					main->move_left(0);
 				else
 					main->move_right(2);
 			}
 			else if (main->getposition().x >=1850)
-				main->stop(0, main->getposition().y);
+				main->move_left(0);
 			else
 				main->move_right(2);
 			break;
