@@ -10,6 +10,8 @@ Game::Game()
 	main = new Sprite("Images\\main.png", glm::vec2(700, 500));
 	main->scale(glm::vec2(100));
 
+
+
 	float x = 1400, y = 500, tmp = 1;
 	for (int i = 0; i < 81; i++)
 	{
@@ -40,6 +42,8 @@ Game::Game()
 		menuList[i].icon->scale(glm::vec2(100));
 		menuy += 150;
 	}
+	wareHouse = new Sprite("Images\\nhakho.png", glm::vec2(850, 400));
+	wareHouse->scale(glm::vec2(200));
 }
 
 Game::~Game()
@@ -66,16 +70,49 @@ void Game::input(vector<Action> actions)
 		switch (action._type)
 		{
 		case MOVE_UP:
-			main->move_up(2);
+			if (main->getposition().x >= wareHouse->getposition().x-50 && main->getposition().x <= wareHouse->getposition().x+180)
+			{
+				if (through(main->getposition().x, main->getposition().y, wareHouse->getposition().x+200, wareHouse->getposition().y+200))
+					main->stop(0, wareHouse->getposition().y + 200);
+				else
+					main->move_up(2);
+			}
+			else if(main->getposition().y <470)
+				main->stop(0, 470);
+			else
+				main->move_up(2);
 			break;
 		case MOVE_DOWN:
-			main->move_down(2);
+			if (main->getposition().y>= 920)
+				main->stop(0, 920);
+			else
+				main->move_down(2);
 			break;
 		case MOVE_LEFT:
-			main->move_left(2);
+			if (main->getposition().x >= wareHouse->getposition().x - 30 && main->getposition().x <= wareHouse->getposition().x + 180)
+			{
+				if (through(main->getposition().x, main->getposition().y, wareHouse->getposition().x + 150, wareHouse->getposition().y + 100))
+					main->stop(0, wareHouse->getposition().x-380);
+				else
+					main->move_left(2);
+			}
+			else if (main->getposition().x <=0)
+				main->stop(0, main->getposition().y);
+			else
+				main->move_left(2);
 			break;
 		case MOVE_RIGHT:
-			main->move_right(2);
+			if (main->getposition().x >= wareHouse->getposition().x - 50 && main->getposition().x <= wareHouse->getposition().x + 150)
+			{
+				if (through(main->getposition().x, main->getposition().y, wareHouse->getposition().x , wareHouse->getposition().y + 100))
+					main->stop(0, wareHouse->getposition().x - 380);
+				else
+					main->move_right(2);
+			}
+			else if (main->getposition().x >=1850)
+				main->stop(0, main->getposition().y);
+			else
+				main->move_right(2);
 			break;
 		case SELECTMENU1:
 			LoadSubMenu();
@@ -306,6 +343,8 @@ void Game::Draw(ShaderProgram* shader)
 	shader->Send_Mat4("model_matrx", main->transformation());
 	main->draw();
 
+
+
 	//mui ten
 	if(target != nullptr)
 	{
@@ -317,7 +356,11 @@ void Game::Draw(ShaderProgram* shader)
 	{
 		shader->Send_Mat4("model_matrx", selected->transformation());
 		selected->draw();
+
 	}
+	//nhakho
+	shader->Send_Mat4("model_matrx", wareHouse->transformation());
+	wareHouse->draw();
 }
 
 void Game::CreatePlantList()
@@ -410,6 +453,14 @@ void Game::LoadSubMenu()
 void Game::DesSubMenu()
 {
 	subMenuList.clear();
+}
+bool Game::through(int x, int y, int a, int b)
+{
+	if (x - a <= 50 && y - b <= 50)
+	{
+		return true;
+	}
+	return false;
 }
 
 

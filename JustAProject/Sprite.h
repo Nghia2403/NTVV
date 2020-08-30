@@ -13,6 +13,7 @@ public:
 
 	glm::mat4 transformation();
 
+	void stop(float speed, int x);
 	void move_up   (float speed);
 	void move_down (float speed);
 	void move_left (float speed);

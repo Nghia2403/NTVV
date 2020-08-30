@@ -61,6 +61,7 @@ public:
 private:
 	Sprite* background;
 	Sprite* main;
+	Sprite* wareHouse;
 	Sprite* selected;
 	vector<FieldFrag*> field;
 	vector<Plants*> plantList;
@@ -72,4 +73,5 @@ private:
 	void CreatePlantList();
 	void LoadSubMenu();
 	void DesSubMenu();
+	bool through(int x, int y, int a, int b);
 };

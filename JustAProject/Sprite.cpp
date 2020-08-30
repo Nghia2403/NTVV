@@ -25,6 +25,12 @@ glm::mat4 Sprite::transformation()
 	return rectangle->GetTransformationMatrx();
 }
 
+void Sprite::stop(float speed, int x)
+{
+	glm::vec2 pos = rectangle->getposition();
+	pos.y = x;
+	rectangle->setposition(pos);
+}
 void Sprite::move_up(float speed)
 {
 	glm::vec2 pos = rectangle->getposition();
