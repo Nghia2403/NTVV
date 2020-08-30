@@ -372,52 +372,52 @@ void Game::CreatePlantList()
 		"Images\\plant\\1-chin.png"));
 	plantList.push_back(new Plants(2, 10, 100, 100,
 		"Images\\menu\\2.png",
-		"Images\\plant\\2.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\2-uong.png",
 		"Images\\plant\\2-chin.png"));
 	plantList.push_back(new Plants(3, 10, 100, 100,
 		"Images\\menu\\3.png",
-		"Images\\plant\\3.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\3-uong.png",
 		"Images\\plant\\3-chin.png"));
 	plantList.push_back(new Plants(4, 10, 100, 100,
 		"Images\\menu\\4.png",
-		"Images\\plant\\4.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\4-uong.png",
 		"Images\\plant\\4-chin.png"));
 	plantList.push_back(new Plants(5, 10, 100, 100,
 		"Images\\menu\\5.png",
-		"Images\\plant\\5.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\5-uong.png",
 		"Images\\plant\\5-chin.png"));
 	plantList.push_back(new Plants(6, 100, 100, 100,
 		"Images\\menu\\6.png",
-		"Images\\plant\\6.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\6-uong.png",
 		"Images\\plant\\6-chin.png"));
 	plantList.push_back(new Plants(7, 100, 100, 100,
 		"Images\\menu\\7.png",
-		"Images\\plant\\7.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\7-uong.png",
 		"Images\\plant\\7-chin.png"));
 	plantList.push_back(new Plants(8, 100, 100, 100,
 		"Images\\menu\\8.png",
-		"Images\\plant\\8.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\8-uong.png",
 		"Images\\plant\\8-chin.png"));
 	plantList.push_back(new Plants(9, 100, 100, 100,
 		"Images\\menu\\9.png",
-		"Images\\plant\\9.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\9-uong.png",
 		"Images\\plant\\9-chin.png"));
 	plantList.push_back(new Plants(10, 100, 100, 100,
 		"Images\\menu\\10.png",
-		"Images\\plant\\10.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\10-uong.png",
 		"Images\\plant\\10-chin.png"));
 	plantList.push_back(new Plants(11, 100, 100, 100,
 		"Images\\menu\\11.png",
-		"Images\\plant\\11.png",
+		"Images\\plant\\gieohat.png",
 		"Images\\plant\\11-uong.png",
 		"Images\\plant\\11-chin.png"));
 }
